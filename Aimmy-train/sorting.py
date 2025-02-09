@@ -40,6 +40,9 @@ for item in Path('.').glob('*.txt'):
     with open(name, 'w') as f:
         f.write(text.replace(',', '.'))
     print('dataset/labels/train/'+name, '  done')
+file = open("labels.txt", "w")
+file.write("Enemy")
+file.close()
 
 os.chdir('../../../dataset/labels/val')
 
@@ -50,3 +53,6 @@ for item in Path('.').glob('*.txt'):
     with open(name, 'w') as f:
         f.write(text.replace(',', '.'))
     print('dataset/labels/val/'+name, '  done')
+file = open("labels.txt", "w")
+file.write("Enemy")
+file.close()
