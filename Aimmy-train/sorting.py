@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 import numpy as np
 
+# Sorting
 os.chdir('images_for_sort')
 
 lst=[1, 2]
@@ -28,4 +29,24 @@ for item in Path('.').glob('*.jpg'):
         except:
             print('no label file')
             pass
-        
+
+# Comma to dot
+os.chdir('../dataset/labels/train')
+
+for item in Path('.').glob('*.txt'):
+    name = str(item)
+    with open(name, 'r') as f:
+        text = f.read()
+    with open(name, 'w') as f:
+        f.write(text.replace(',', '.'))
+    print('dataset/labels/train/'+name, '  done')
+
+os.chdir('../../../dataset/labels/val')
+
+for item in Path('.').glob('*.txt'):
+    name = str(item)
+    with open(name, 'r') as f:
+        text = f.read()
+    with open(name, 'w') as f:
+        f.write(text.replace(',', '.'))
+    print('dataset/labels/val/'+name, '  done')
