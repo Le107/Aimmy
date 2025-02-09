@@ -1,1 +1,1 @@
-labels for sorting for training and validation (70/30)
+labels for sorting training and validation (70/30)
